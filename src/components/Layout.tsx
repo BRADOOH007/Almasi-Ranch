@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { WhatsAppButton } from './WhatsAppButton';
 
 export const Layout = () => (
   <div className="flex min-h-screen flex-col">
@@ -9,5 +10,6 @@ export const Layout = () => (
       <Outlet />
     </main>
     <Footer />
+    <WhatsAppButton />
   </div>
 );

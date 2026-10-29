@@ -1,55 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { faqs, hero, products, services, site, whatsappLink, type Product } from '../config/site';
+import { faqs, hero, products, services, site, testimonials, whatsappLink, type Product } from '../config/site';
 import { useTitle } from '../lib/useTitle';
 import { OrderModal } from '../components/OrderModal';
+import { ToastNotifications } from '../components/ToastNotifications';
 
 const priceText = (p: Product) =>
   p.to ? `KSh ${p.from.toLocaleString()} – ${p.to.toLocaleString()}` : `From KSh ${p.from.toLocaleString()}`;
 
-const testimonials = [
-  { name: 'Grace Wanjiku', location: 'Naivasha', text: 'Quality animals, honest prices, and the team walked me through everything. Highly recommended for any farmer.' },
-  { name: 'Peter Mwangi', location: 'Nakuru', text: 'Bought dairy goats that are already producing well. The after-sale support via WhatsApp is excellent.' },
-  { name: 'Faith Chebet', location: 'Eldoret', text: 'The farm visit was worth every shilling. I saw the animals, selected my stock, and got expert advice.' },
-];
-
-const stats = [
-  { value: '21+', label: 'Products' },
-  { value: '100%', label: 'Vaccinated' },
-  { value: '24/7', label: 'WhatsApp Support' },
-  { value: 'Kenya-wide', label: 'Delivery' },
-];
-
 export const Home = () => {
   useTitle('Almasi Ranch | Dairy Cattle, Goats & Fresh Dairy, Nanyuki');
   const [open, setOpen] = useState<Product | null>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setTestimonialIndex((i) => (i + 1) % testimonials.length), 6000);
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <>
       {/* Hero */}
       <section className="relative isolate flex min-h-[90vh] items-center overflow-hidden bg-forest-deep text-cream">
         <div className="absolute inset-0 -z-10">
-          <img
-            src="/assets/hero-2.jpg"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-forest-deep/95" />
+          <img src="/assets/hero-2.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-[#0c1a12]" />
         </div>
-        {/* Decorative elements */}
         <div className="absolute -left-40 top-20 -z-10 h-[500px] w-[500px] rounded-full border border-gold/10" />
-        <div className="absolute -right-20 bottom-20 -z-10 h-[300px] w-[300px] rounded-full border border-gold/20" />
-        <div className="absolute right-1/4 top-1/3 -z-10 h-2 w-2 rounded-full bg-gold/40" />
-        <div className="absolute left-1/3 bottom-1/4 -z-10 h-1.5 w-1.5 rounded-full bg-gold/30" />
+        <div className="absolute -right-20 bottom-20 -z-10 h-[400px] w-[400px] rounded-full border border-gold/15" />
+        <div className="absolute right-1/4 top-1/3 -z-10 h-3 w-3 rounded-full bg-gold/40" />
+        <div className="absolute left-1/3 bottom-1/4 -z-10 h-2 w-2 rounded-full bg-gold/30" />
+        <div className="absolute right-1/3 top-2/3 -z-10 h-1.5 w-1.5 rounded-full bg-cream/20" />
 
         <div className="container-page">
           <p className="rise eyebrow !text-gold-light">{hero.eyebrow}</p>
-          <h1 className="rise-2 mt-6 max-w-4xl text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="rise-2 mt-6 max-w-4xl text-5xl font-bold leading-[1.05] sm:text-7xl lg:text-8xl">
             {hero.heading}
           </h1>
-          <p className="rise-3 mt-8 max-w-xl text-lg leading-relaxed text-cream/80">
+          <p className="rise-3 mt-8 max-w-xl text-lg leading-relaxed text-cream/80 sm:text-xl">
             {hero.subheading}
+          </p>
+          <p className="rise-3 mt-4 max-w-xl text-sm text-cream/60">
+            Dairy cattle · Goats · Sheep · Poultry · Fresh dairy · Farm inputs
           </p>
           <div className="rise-3 mt-12 flex flex-wrap gap-4">
             <Link to="/products" className="btn-forest !bg-gold !text-forest-deep hover:!bg-gold-light">
@@ -65,9 +57,14 @@ export const Home = () => {
       {/* Stats bar */}
       <section className="bg-forest-deep border-t border-cream/10">
         <div className="container-page grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-          {stats.map((s) => (
+          {[
+            { value: '21+', label: 'Products' },
+            { value: '100%', label: 'Vaccinated' },
+            { value: '24/7', label: 'WhatsApp Support' },
+            { value: 'Kenya-wide', label: 'Delivery' },
+          ].map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-serif text-4xl font-bold text-gold sm:text-5xl">{s.value}</p>
+              <p className="font-serif text-5xl font-bold text-gold sm:text-6xl">{s.value}</p>
               <p className="mt-2 text-xs font-semibold uppercase tracking-widest2 text-cream/60">{s.label}</p>
             </div>
           ))}
@@ -91,17 +88,18 @@ export const Home = () => {
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((p) => (
+            {products.filter(p => p.slug !== 'horses').map((p) => (
               <article key={p.slug} className="group card flex flex-col overflow-hidden p-0">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-forest">
+                  <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-forest shadow-sm">
                     {p.category}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-xl font-semibold text-forest-deep">{p.name}</h3>
+                  <h3 className="font-serif text-xl font-semibold text-forest-deep">{p.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70">{p.blurb}</p>
+                  <p className="mt-3 text-[0.8rem] italic text-ink/55">{p.care}</p>
                   <div className="mt-4 border-t border-forest/10 pt-4">
                     <p className="font-serif text-xl font-semibold text-forest">
                       {p.to ? `KSh ${p.from.toLocaleString()} – ${p.to.toLocaleString()}` : `From KSh ${p.from.toLocaleString()}`}
@@ -112,7 +110,7 @@ export const Home = () => {
                       onClick={() => setOpen(p)}
                       className="mt-3 text-[0.75rem] font-semibold uppercase tracking-widest2 text-gold hover:text-forest"
                     >
-                      Enquire →
+                      Buy →
                     </button>
                   </div>
                 </div>
@@ -161,21 +159,45 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials Carousel */}
       <section className="section bg-forest-deep text-cream">
         <div className="container-page">
           <p className="eyebrow !text-gold-light">Client stories</p>
           <h2 className="mt-4 text-4xl font-semibold sm:text-5xl">What our clients say</h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl border border-cream/10 bg-cream/5 p-7 backdrop-blur-sm">
-                <p className="font-serif text-lg italic leading-relaxed text-cream/90">"{t.text}"</p>
-                <div className="mt-6 border-t border-cream/10 pt-4">
-                  <p className="font-semibold text-gold-light">{t.name}</p>
-                  <p className="text-xs text-cream/50">{t.location}</p>
-                </div>
+          <div className="mt-12 relative">
+            <div className="mx-auto max-w-3xl rounded-2xl border border-cream/10 bg-cream/5 p-8 backdrop-blur-sm">
+              <p className="font-serif text-xl italic leading-relaxed text-cream/90">"{testimonials[testimonialIndex].text}"</p>
+              <div className="mt-6 border-t border-cream/10 pt-4">
+                <p className="font-semibold text-gold-light">{testimonials[testimonialIndex].name}</p>
+                <p className="text-xs text-cream/50">{testimonials[testimonialIndex].location}</p>
               </div>
-            ))}
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <button
+                onClick={() => setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition hover:border-gold hover:text-gold"
+                aria-label="Previous testimonial"
+              >
+                ‹
+              </button>
+              <div className="flex gap-2">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setTestimonialIndex(i)}
+                    className={`h-2 w-2 rounded-full transition ${i === testimonialIndex ? 'bg-gold w-6' : 'bg-cream/30'}`}
+                    aria-label={`Testimonial ${i + 1}`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition hover:border-gold hover:text-gold"
+                aria-label="Next testimonial"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -211,6 +233,7 @@ export const Home = () => {
       </section>
 
       <OrderModal product={open} onClose={() => setOpen(null)} />
+      <ToastNotifications />
     </>
   );
 };

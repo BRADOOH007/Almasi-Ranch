@@ -22,9 +22,11 @@ export const Header = () => {
         scrolled ? 'bg-cream/95 shadow-sm backdrop-blur' : 'bg-cream'
       }`}
     >
-      <div className="container-page flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
-          <img src="/logo.svg" alt="Almasi Ranch" className="h-11 w-auto" />
+      <div className="container-page flex items-center justify-between py-3">
+        <Link to="/" className="group" aria-label={`${site.name} home`}>
+          <span className="font-serif text-2xl font-semibold italic tracking-tight text-forest-deep transition group-hover:text-gold sm:text-3xl">
+            {site.name}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -33,9 +35,7 @@ export const Header = () => {
               key={l.href}
               to={l.href}
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-widest2 transition ${
-                  isActive ? 'bg-forest text-cream' : 'text-ink/80 hover:bg-forest/10 hover:text-forest'
-                }`
+                `nav-link ${isActive ? 'active text-gold' : 'text-ink/80 hover:text-forest'}`
               }
             >
               {l.label}
@@ -43,8 +43,8 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-forest !px-5 !py-2.5">
+        <div className="hidden items-center gap-3 md:flex">
+          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-forest !px-4 !py-2">
             WhatsApp
           </a>
         </div>

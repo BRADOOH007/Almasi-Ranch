@@ -27,7 +27,7 @@ export const OrderModal = ({ product, onClose }: Props) => {
   const send = (e: React.FormEvent) => {
     e.preventDefault();
     const message = [
-      `Hello Almasi Ranch, I would like to enquire about ${product.name}.`,
+      `Hello Almasi Ranch, I would like to buy ${product.name}.`,
       `Quantity: ${quantity}`,
       `Name: ${name}`,
       `Phone: ${phone}`,
@@ -45,7 +45,7 @@ export const OrderModal = ({ product, onClose }: Props) => {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Enquire about ${product.name}`}
+      aria-label={`Buy ${product.name}`}
       className="fixed inset-0 z-[70] flex items-center justify-center bg-forest-deep/70 p-5 backdrop-blur-sm"
       onClick={onClose}
     >
@@ -76,7 +76,7 @@ export const OrderModal = ({ product, onClose }: Props) => {
             <button type="button" onClick={onClose} className="text-sm font-semibold text-forest-deep/60 hover:text-forest-deep">
               Cancel
             </button>
-            <button type="submit" className="btn-forest">Send on WhatsApp</button>
+            <button type="submit" className="btn-forest">Buy & Get Payment Details</button>
           </div>
         </form>
       </div>

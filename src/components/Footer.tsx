@@ -2,12 +2,18 @@ import { Link } from 'react-router-dom';
 import { navLinks, site } from '../config/site';
 
 export const Footer = () => (
-  <footer className="bg-forest-deep text-cream">
-    <div className="container-page grid gap-12 py-20 md:grid-cols-3">
+  <footer className="relative overflow-hidden bg-forest-deep text-cream">
+    <div className="absolute inset-0 opacity-5">
+      <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full border border-gold/30" />
+      <div className="absolute -bottom-20 -right-20 h-96 w-96 rounded-full border border-gold/20" />
+    </div>
+    <div className="container-page relative grid gap-12 py-20 md:grid-cols-3">
       <div>
-        <img src="/logo.svg" alt="Almasi Ranch" className="h-12 w-auto rounded-md bg-cream p-1.5" />
+        <span className="font-serif text-3xl font-semibold italic tracking-tight text-cream">
+          {site.name}
+        </span>
         <p className="mt-6 max-w-xs font-serif text-xl italic text-cream/80">{site.tagline}.</p>
-        <p className="mt-3 text-sm text-cream/60">Based in {site.location}.</p>
+        <p className="mt-3 text-sm text-cream/50">Based in {site.location}.</p>
       </div>
 
       <div>

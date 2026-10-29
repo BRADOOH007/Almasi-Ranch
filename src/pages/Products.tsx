@@ -49,23 +49,28 @@ export const Products = () => {
           <ul className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((p) => (
               <li key={p.slug}>
-                <article className="card flex h-full flex-col">
-                  <div className="flex items-center justify-between">
-                    <p className="eyebrow">{p.category}</p>
-                    <span className="text-xs text-ink/50">{p.unit}</span>
+                <article className="card flex h-full flex-col overflow-hidden p-0">
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+                    <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-forest shadow-sm">
+                      {p.category}
+                    </span>
                   </div>
-                  <h2 className="mt-4 text-3xl font-semibold text-forest-deep">{p.name}</h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{p.blurb}</p>
-                  <p className="mt-4 text-sm italic text-ink/60">{p.care}</p>
-                  <div className="mt-6 flex items-end justify-between border-t border-forest/10 pt-5">
-                    <p className="font-serif text-2xl font-semibold text-forest">{priceText(p)}</p>
-                    <button
-                      type="button"
-                      onClick={() => setOpen(p)}
-                      className="btn-forest !px-5 !py-2.5 !text-[0.7rem]"
-                    >
-                      Enquire
-                    </button>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="text-3xl font-semibold text-forest-deep">{p.name}</h2>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{p.blurb}</p>
+                    <p className="mt-4 text-sm italic text-ink/60">{p.care}</p>
+                    <div className="mt-6 flex items-end justify-between border-t border-forest/10 pt-5">
+                      <p className="font-serif text-2xl font-semibold text-forest">{priceText(p)}</p>
+                      <p className="text-xs text-ink/50">{p.unit}</p>
+                      <button
+                        type="button"
+                        onClick={() => setOpen(p)}
+                        className="btn-forest !px-5 !py-2.5 !text-[0.7rem]"
+                      >
+                        Buy
+                      </button>
+                    </div>
                   </div>
                 </article>
               </li>
