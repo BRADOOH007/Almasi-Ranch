@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Almasi Ranch">
+  <circle cx="48" cy="48" r="40" fill="#2f5d3a"/>
+  <path d="M28 60 L48 30 L68 60 Z" fill="#d4a24c"/>
+  <text x="104" y="44" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="26" fill="#1f3f27">ALMASI</text>
+  <text x="104" y="70" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="15" letter-spacing="4" fill="#8b5e3c">RANCH</text>
+</svg>
