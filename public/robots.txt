@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://almasiranchofficial.com/sitemap.xml

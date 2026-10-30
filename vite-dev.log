@@ -3,9 +3,50 @@
 > vite
 
 
-  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1345[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1321[22m[2m[0m ms[22m
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
 [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
 [2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[2m12:29:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ToastNotifications.tsx, /src/index.css[22m
+[2m8:48:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:26 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:26 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:27 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:27 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m8:48:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m8:48:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m8:48:50 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m8:48:50 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m8:49:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Header.tsx, /src/index.css[22m
+[2m8:49:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Header.tsx, /src/index.css[22m
+[2m8:49:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.tsx, /src/index.css[22m
+[2m8:49:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.tsx, /src/index.css[22m
+[2m8:49:39 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m8:50:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ToastNotifications.tsx, /src/index.css[22m
+[2m8:50:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Products.tsx, /src/index.css[22m
+[2m8:51:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/WhatsAppButton.tsx, /src/index.css[22m
+[2m8:51:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m8:56:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Blog.tsx, /src/index.css[22m
+[2m8:56:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m8:56:18 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m8:58:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m9:01:46 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m9:02:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m9:02:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2m9:03:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2m9:03:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m9:06:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ToastNotifications.tsx, /src/index.css[22m
+[2m9:06:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m9:06:14 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.tsx, /src/index.css[22m
+[2m9:10:10 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m9:10:36 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/components/OrderModal.tsx, /src/components/ToastNotifications.tsx, /src/components/Footer.tsx, /src/components/Header.tsx, /src/components/WhatsAppButton.tsx[22m
+[2m9:10:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/pages/NotFound.tsx[22m
+[2m9:11:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Home.tsx, /src/pages/About.tsx, /src/pages/Contact.tsx, /src/pages/Services.tsx, /src/pages/Blog.tsx, /src/pages/Products.tsx, /src/pages/NotFound.tsx[22m

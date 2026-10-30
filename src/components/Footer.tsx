@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { navLinks, site } from '../config/site';
+import { Logo } from './Logo';
 
 export const Footer = () => (
   <footer className="relative overflow-hidden bg-forest-deep text-cream">
@@ -9,9 +10,7 @@ export const Footer = () => (
     </div>
     <div className="container-page relative grid gap-12 py-20 md:grid-cols-3">
       <div>
-        <span className="font-serif text-3xl font-semibold italic tracking-tight text-cream">
-          {site.name}
-        </span>
+        <Logo className="text-cream" />
         <p className="mt-6 max-w-xs font-serif text-xl italic text-cream/80">{site.tagline}.</p>
         <p className="mt-3 text-sm text-cream/50">Based in {site.location}.</p>
       </div>

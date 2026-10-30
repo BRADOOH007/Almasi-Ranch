@@ -12,7 +12,7 @@ export default {
         ink: '#1c211e',
       },
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { widest2: '0.22em' },

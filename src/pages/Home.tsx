@@ -5,8 +5,12 @@ import { useTitle } from '../lib/useTitle';
 import { OrderModal } from '../components/OrderModal';
 import { ToastNotifications } from '../components/ToastNotifications';
 
-const priceText = (p: Product) =>
-  p.to ? `KSh ${p.from.toLocaleString()} – ${p.to.toLocaleString()}` : `From KSh ${p.from.toLocaleString()}`;
+const steps = [
+  { title: 'Choose', body: 'Browse the catalogue or call us. Tell us what you need for your farm.' },
+  { title: 'Confirm', body: 'We confirm availability and the final price before anything is booked.' },
+  { title: 'Health & records', body: 'Every animal is vaccinated, checked and sent with its health and breeding records.' },
+  { title: 'Delivery or visit', body: 'Collect at the ranch, or we arrange careful transport across Kenya.' },
+];
 
 export const Home = () => {
   useTitle('Almasi Ranch | Dairy Cattle, Goats & Fresh Dairy, Nanyuki');
@@ -23,48 +27,43 @@ export const Home = () => {
       {/* Hero */}
       <section className="relative isolate flex min-h-[90vh] items-center overflow-hidden bg-forest-deep text-cream">
         <div className="absolute inset-0 -z-10">
-          <img src="/assets/hero-2.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-25" />
+          <img src="/githaka/herd.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-[#0c1a12]" />
         </div>
         <div className="absolute -left-40 top-20 -z-10 h-[500px] w-[500px] rounded-full border border-gold/10" />
         <div className="absolute -right-20 bottom-20 -z-10 h-[400px] w-[400px] rounded-full border border-gold/15" />
-        <div className="absolute right-1/4 top-1/3 -z-10 h-3 w-3 rounded-full bg-gold/40" />
-        <div className="absolute left-1/3 bottom-1/4 -z-10 h-2 w-2 rounded-full bg-gold/30" />
-        <div className="absolute right-1/3 top-2/3 -z-10 h-1.5 w-1.5 rounded-full bg-cream/20" />
 
         <div className="container-page">
           <p className="rise eyebrow !text-gold-light">{hero.eyebrow}</p>
-          <h1 className="rise-2 mt-6 max-w-4xl text-5xl font-bold leading-[1.05] sm:text-7xl lg:text-8xl">
+          <h1 className="rise-2 mt-6 max-w-4xl font-serif text-6xl font-semibold leading-[1] sm:text-7xl lg:text-8xl">
             {hero.heading}
           </h1>
-          <p className="rise-3 mt-8 max-w-xl text-lg leading-relaxed text-cream/80 sm:text-xl">
-            {hero.subheading}
-          </p>
-          <p className="rise-3 mt-4 max-w-xl text-sm text-cream/60">
+          <p className="rise-3 mt-8 max-w-xl text-lg leading-relaxed text-cream/80 sm:text-xl">{hero.subheading}</p>
+          <p className="rise-3 mt-4 max-w-xl text-sm tracking-wide text-cream/60">
             Dairy cattle · Goats · Sheep · Poultry · Fresh dairy · Farm inputs
           </p>
           <div className="rise-3 mt-12 flex flex-wrap gap-4">
             <Link to="/products" className="btn-forest !bg-gold !text-forest-deep hover:!bg-gold-light">
               Browse Products
             </Link>
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-              WhatsApp Us
-            </a>
+            <Link to="/contact" className="btn-outline">
+              Plan a Farm Visit
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Stats bar */}
-      <section className="bg-forest-deep border-t border-cream/10">
-        <div className="container-page grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
+      <section className="border-t border-cream/10 bg-forest-deep">
+        <div className="container-page grid grid-cols-2 gap-8 py-12 md:grid-cols-4">
           {[
             { value: '21+', label: 'Products' },
             { value: '100%', label: 'Vaccinated' },
-            { value: '24/7', label: 'WhatsApp Support' },
+            { value: 'Full', label: 'Health records' },
             { value: 'Kenya-wide', label: 'Delivery' },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-serif text-5xl font-bold text-gold sm:text-6xl">{s.value}</p>
+              <p className="font-serif text-5xl font-semibold text-gold sm:text-6xl">{s.value}</p>
               <p className="mt-2 text-xs font-semibold uppercase tracking-widest2 text-cream/60">{s.label}</p>
             </div>
           ))}
@@ -88,7 +87,7 @@ export const Home = () => {
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.filter(p => p.slug !== 'horses').map((p) => (
+            {products.filter((p) => p.slug !== 'horses').map((p) => (
               <article key={p.slug} className="group card flex flex-col overflow-hidden p-0">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -97,11 +96,11 @@ export const Home = () => {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-serif text-xl font-semibold text-forest-deep">{p.name}</h3>
+                  <h3 className="font-serif text-2xl font-semibold text-forest-deep">{p.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70">{p.blurb}</p>
                   <p className="mt-3 text-[0.8rem] italic text-ink/55">{p.care}</p>
                   <div className="mt-4 border-t border-forest/10 pt-4">
-                    <p className="font-serif text-xl font-semibold text-forest">
+                    <p className="font-serif text-2xl font-semibold text-forest">
                       {p.to ? `KSh ${p.from.toLocaleString()} – ${p.to.toLocaleString()}` : `From KSh ${p.from.toLocaleString()}`}
                     </p>
                     <p className="text-xs text-ink/50">{p.unit}</p>
@@ -120,8 +119,25 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* About the ranch */}
+      {/* How buying works */}
       <section className="section bg-sand">
+        <div className="container-page">
+          <p className="eyebrow">How it works</p>
+          <h2 className="section-title mt-4 max-w-2xl">From enquiry to your farm, in four steps.</h2>
+          <ol className="mt-14 grid gap-10 md:grid-cols-4">
+            {steps.map((s, i) => (
+              <li key={s.title} className="border-t border-gold/40 pt-6">
+                <p className="font-serif text-4xl font-semibold text-gold">0{i + 1}</p>
+                <h3 className="mt-4 font-serif text-2xl font-semibold text-forest-deep">{s.title}</h3>
+                <p className="mt-3 leading-relaxed text-ink/70">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* About the ranch */}
+      <section className="section">
         <div className="container-page grid items-center gap-16 md:grid-cols-2">
           <div>
             <p className="eyebrow">Our philosophy</p>
@@ -136,21 +152,26 @@ export const Home = () => {
             </Link>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-forest/5" />
-            <img src="/assets/hero-1.jpg" alt="Almasi Ranch" className="relative rounded-2xl shadow-2xl" />
+            <div className="absolute -inset-4 rounded-3xl border border-gold/20" />
+            <img
+              src="/githaka/githaka-9.jpg"
+              alt="Cattle herd grazing on the ranch"
+              loading="lazy"
+              className="relative aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
+            />
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="section">
+      <section className="section bg-sand/60">
         <div className="container-page">
           <p className="eyebrow">What we offer</p>
           <h2 className="section-title mt-4 max-w-2xl">Services built around your farm.</h2>
           <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <div key={s.name} className="card flex flex-col">
-                <h3 className="text-2xl font-semibold text-forest-deep">{s.name}</h3>
+                <h3 className="font-serif text-2xl font-semibold text-forest-deep">{s.name}</h3>
                 <p className="mt-3 flex-1 leading-relaxed text-ink/70">{s.blurb}</p>
                 {s.price && <p className="mt-5 text-sm font-semibold text-forest">{s.price}</p>}
               </div>
@@ -163,10 +184,10 @@ export const Home = () => {
       <section className="section bg-forest-deep text-cream">
         <div className="container-page">
           <p className="eyebrow !text-gold-light">Client stories</p>
-          <h2 className="mt-4 text-4xl font-semibold sm:text-5xl">What our clients say</h2>
+          <h2 className="mt-4 font-serif text-4xl font-semibold sm:text-5xl">What our clients say</h2>
           <div className="mt-12 relative">
             <div className="mx-auto max-w-3xl rounded-2xl border border-cream/10 bg-cream/5 p-8 backdrop-blur-sm">
-              <p className="font-serif text-xl italic leading-relaxed text-cream/90">"{testimonials[testimonialIndex].text}"</p>
+              <p className="font-serif text-2xl italic leading-relaxed text-cream/90">"{testimonials[testimonialIndex].text}"</p>
               <div className="mt-6 border-t border-cream/10 pt-4">
                 <p className="font-semibold text-gold-light">{testimonials[testimonialIndex].name}</p>
                 <p className="text-xs text-cream/50">{testimonials[testimonialIndex].location}</p>
@@ -185,7 +206,7 @@ export const Home = () => {
                   <button
                     key={i}
                     onClick={() => setTestimonialIndex(i)}
-                    className={`h-2 w-2 rounded-full transition ${i === testimonialIndex ? 'bg-gold w-6' : 'bg-cream/30'}`}
+                    className={`h-2 rounded-full transition ${i === testimonialIndex ? 'w-6 bg-gold' : 'w-2 bg-cream/30'}`}
                     aria-label={`Testimonial ${i + 1}`}
                   />
                 ))}
@@ -203,14 +224,16 @@ export const Home = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-sand">
-        <div className="container-page">
-          <p className="eyebrow">Questions</p>
-          <h2 className="section-title mt-4 max-w-2xl">Frequently asked</h2>
-          <dl className="mt-12 divide-y divide-forest/10">
+      <section className="section">
+        <div className="container-page grid gap-12 md:grid-cols-[1fr_2fr]">
+          <div>
+            <p className="eyebrow">Questions</p>
+            <h2 className="section-title mt-4">Frequently asked</h2>
+          </div>
+          <dl className="divide-y divide-forest/10">
             {faqs.map((f) => (
               <div key={f.q} className="py-6">
-                <dt className="font-serif text-xl font-semibold text-forest-deep">{f.q}</dt>
+                <dt className="font-serif text-2xl font-semibold text-forest-deep">{f.q}</dt>
                 <dd className="mt-2 text-sm leading-relaxed text-ink/70">{f.a}</dd>
               </div>
             ))}
@@ -219,16 +242,22 @@ export const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="section">
-        <div className="container-page rounded-3xl bg-forest px-8 py-16 text-center text-cream sm:px-16">
+      <section className="section pt-0">
+        <div className="container-page relative isolate overflow-hidden rounded-3xl bg-forest-deep px-8 py-20 text-center text-cream sm:px-16">
+          <img src="/githaka/herd.jpg" alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20" />
           <p className="eyebrow !text-gold-light">Begin here</p>
-          <h2 className="mt-4 text-4xl font-semibold sm:text-5xl">Let us help you build your herd.</h2>
+          <h2 className="mt-4 font-serif text-4xl font-semibold sm:text-5xl">Let us help you build your herd.</h2>
           <p className="mx-auto mt-5 max-w-xl text-cream/75">
             Call or WhatsApp {site.phoneDisplay}. {site.hours}.
           </p>
-          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-ghost mt-10">
-            Start a conversation
-          </a>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-outline">
+              Start a conversation
+            </a>
+            <a href={site.phoneHref} className="btn-forest !bg-gold !text-forest-deep hover:!bg-gold-light">
+              Call the ranch
+            </a>
+          </div>
         </div>
       </section>
 

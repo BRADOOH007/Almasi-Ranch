@@ -60,7 +60,7 @@ export const Products = () => {
                     <h2 className="text-3xl font-semibold text-forest-deep">{p.name}</h2>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{p.blurb}</p>
                     <p className="mt-4 text-sm italic text-ink/60">{p.care}</p>
-                    <div className="mt-6 flex items-end justify-between border-t border-forest/10 pt-5">
+                    <div className="mt-6 flex flex-wrap items-end justify-between gap-x-4 gap-y-3 border-t border-forest/10 pt-5">
                       <p className="font-serif text-2xl font-semibold text-forest">{priceText(p)}</p>
                       <p className="text-xs text-ink/50">{p.unit}</p>
                       <button

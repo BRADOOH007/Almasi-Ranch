@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { navLinks, site, whatsappLink } from '../config/site';
+import { Logo } from './Logo';
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,10 +24,8 @@ export const Header = () => {
       }`}
     >
       <div className="container-page flex items-center justify-between py-3">
-        <Link to="/" className="group" aria-label={`${site.name} home`}>
-          <span className="font-serif text-2xl font-semibold italic tracking-tight text-forest-deep transition group-hover:text-gold sm:text-3xl">
-            {site.name}
-          </span>
+        <Link to="/" className="group text-forest-deep transition hover:opacity-80" aria-label={`${site.name} home`}>
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

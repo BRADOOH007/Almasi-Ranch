@@ -64,7 +64,7 @@ export const Blog = () => {
           <p className="mx-auto mt-5 max-w-xl text-cream/75">
             Call or WhatsApp {site.phoneDisplay}. {site.hours}.
           </p>
-          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-ghost mt-10">
+          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-outline mt-10">
             Start a conversation
           </a>
         </div>

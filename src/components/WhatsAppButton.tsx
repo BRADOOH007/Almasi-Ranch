@@ -1,5 +1,5 @@
 import { MessageCircle } from 'lucide-react';
-import { site, whatsappLink } from '../config/site';
+import { whatsappLink } from '../config/site';
 
 export const WhatsAppButton = () => (
   <a

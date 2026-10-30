@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { @apply bg-cream font-sans text-ink antialiased; }
-  h1, h2, h3, h4 { @apply font-serif font-bold; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+  body { @apply bg-cream font-sans text-ink antialiased; overflow-x: hidden; }
+  h1, h2, h3, h4 { @apply font-serif font-semibold tracking-[-0.01em]; }
   :focus-visible { @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-cream; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -38,7 +38,7 @@
 }
 
 @layer components {
-  .container-page { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
+  .container-page { @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10; }
   .section { @apply py-20 lg:py-28; }
   .eyebrow { @apply text-[0.72rem] font-semibold uppercase tracking-widest2 text-gold; }
   .section-title { @apply text-4xl font-semibold leading-tight text-forest-deep sm:text-5xl; }

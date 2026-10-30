@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Almasi Ranch">
-  <circle cx="48" cy="48" r="40" fill="#2f5d3a"/>
-  <path d="M28 60 L48 30 L68 60 Z" fill="#d4a24c"/>
-  <text x="104" y="44" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="26" fill="#1f3f27">ALMASI</text>
-  <text x="104" y="70" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="15" letter-spacing="4" fill="#8b5e3c">RANCH</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" role="img" aria-label="Almasi Ranch">
+  <g fill="none" stroke="#1e3a2b" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 4)">
+    <circle cx="24" cy="24" r="22.5" stroke-opacity="0.35" stroke-width="1.2"/>
+    <path d="M11 34 L21 18 L27 27 L31 21 L37 34" stroke-width="2.2"/>
+  </g>
+  <circle cx="33" cy="18.5" r="2.2" fill="#b8924a"/>
+  <text x="62" y="31" font-family="Georgia, 'Times New Roman', serif" font-weight="600" font-size="22" letter-spacing="3" fill="#1e3a2b">ALMASI</text>
+  <text x="63" y="46" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="8.5" letter-spacing="4" fill="#b8924a">RANCH</text>
 </svg>
